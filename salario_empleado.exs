@@ -21,11 +21,16 @@ defmodule Main do
 
   def calcular_total() do
     nombre=nombre_empleado()
-    salario=trunc(salario_base())
+    salario=salario_base()
     horas=horas_extra()
     valor_hora_extra=(salario/160)*1.5*horas  # Suponiendo que trabaja 160 hrs mensuales
-    total=salario+valor_hora_extra
-    Util.show_message("Ingrese el nombre del empleado: #{nombre}\nIngrese el salario base: $#{salario}\nIngrese las horas extras trabajadas: #{horas}\nEl salario total de #{nombre} es de $#{trunc(total)}")
+   total = salario + valor_hora_extra
+
+  Util.show_message(
+    " el nombre del empleado es: #{nombre}\n" <>
+    " con un salario base de: $#{Util.miles(salario)}\n" <>
+    " las horas extras trabajadas son : #{horas}\n" <>
+    " El salario total de #{nombre} es de $#{Util.miles(total)}")
   end
 
 end

@@ -4,6 +4,11 @@ defmodule Util do
     System.cmd("java", ["-cp", ".", "Mensaje", message])
   end
 
+  def input(message) do
+    System.cmd("java", ["-cp", ".", "Mensaje", "input", message])
+    |> elem(0)
+    |> String.trim()
+  end
   def input(message, :string) do
     System.cmd("java", ["-cp", ".", "Mensaje", "input", message])
     |> elem(0)
@@ -39,5 +44,18 @@ defmodule Util do
         message
       |> input(:float)
     end
+  end
+  def miles(num) when is_integer(num) do
+    num
+    |> Integer.to_string()
+    |> String.reverse()
+    |> String.replace(~r/.{3}(?=.)/, "\\0.")
+    |> String.reverse()
+  end
+  def miles(num) when is_float(num) do
+    num
+    |> Float.round(0)
+    |> trunc()
+    |> miles()
   end
 end

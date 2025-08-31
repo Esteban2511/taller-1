@@ -3,7 +3,7 @@ defmodule Main do
     cliente = ingresar_nombre_cliente()
     peso = ingresar_peso()
     tipo_envio = ingresar_tipo_envio()
-    costo = calcular_costo(peso, tipo_envio)
+    costo = calcular_costo(peso, tipo_envio) |> Util.miles()
 
     resultado = {cliente, peso, tipo_envio, costo}
 
