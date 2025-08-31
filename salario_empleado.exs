@@ -18,10 +18,11 @@ defmodule Main do
     "Ingrese las horas extra trabajadas: "
     |> Util.input(:integer)
   end
-
+  
   def calcular_total() do
     nombre=nombre_empleado()
     salario=trunc(salario_base())
+    salario=salario_base()
     horas=horas_extra()
     valor_hora_extra=(salario/160)*1.5*horas  # Suponiendo que trabaja 160 hrs mensuales
     total=salario+valor_hora_extra
