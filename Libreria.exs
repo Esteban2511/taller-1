@@ -1,7 +1,6 @@
 defmodule Main do
 
   def main() do
-
     calcular_valor_inventario()
   end
 
