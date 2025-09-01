@@ -32,16 +32,4 @@ end
 
 Main.main()
 
-#defmodule Main do
-#  def main() do
-#    pedir_datos()
-#  end
-#  def pedir_datos() do
-#    titulo = "Ingrese el titulo del libro:" |> Util.input()
-#    inventario = Util.input("Ingrese la cantidad de unidades disponibles del libro:", :integer)
-#    precio = Util.input("Ingrese el precio del libro en pesos:", :float)
-#    valor = precio * inventario |> Float.round(0) |> trunc() |> Util.miles()
-#    Util.show_message("El libro #{titulo} con #{inventario} unidades disponibles tiene un valor total de inventario de #{valor} pesos")
-#  end
-#end
-#Main.main()
+
