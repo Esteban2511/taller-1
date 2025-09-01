@@ -2,11 +2,20 @@ defmodule Main do
   def main() do
     pedir_datos()
   end
+  def placa_vehiculo() do
+    "Ingrese la placa del coche:" |> Util.input(:string)
+  end
+  def tipo_vehiculo() do
+    "Ingrese el tipo de vehiculo:\n MOTO, CARRO o CAMION" |> Util.input(:string)|> String.upcase()
+  end
+  def peso_vehiculo() do
+    "Ingrese el peso del coche en toneladas:" |> Util.input(:float)
+  end
   def pedir_datos() do
-    placa = "Ingrese la placa del coche:" |> Util.input()
-    tipo = Util.input("Ingrese el tipo de vehiculo:\n MOTO, CARRO o CAMION", :string) |> String.upcase()
-    peso = Util.input("Ingrese el peso del coche en toneladas:", :float)
-    tarifa = Float.to_string((calcular_tarifa(tipo, peso)), decimals: 0) |> Util.miles()
+    placa = placa_vehiculo()
+    tipo = tipo_vehiculo()
+    peso = peso_vehiculo()
+    tarifa = (calcular_tarifa(tipo, peso)) |> Util.miles()
     Util.show_message("La tarifa de la placa #{placa} es de #{tarifa} pesos")
   end
   def calcular_tarifa(tipo, peso) do
