@@ -24,10 +24,9 @@ defmodule Util do
 
     rescue
       ArgumentError->
-       IO.puts(:error, "No se ha introducido un valor entero valido")
+       IO.puts( "No se ha introducido un valor entero valido")
 
-        message
-      |> input(:integer)
+        input(message, :integer)
     end
   end
 
@@ -39,10 +38,8 @@ defmodule Util do
 
     rescue
       ArgumentError->
-       IO.puts(:error, "No se ha introducido un valor decimal valido")
-
-        message
-      |> input(:float)
+       IO.puts("No se ha introducido un valor decimal valido")
+        input(message, :float)
     end
   end
   def miles(num) when is_integer(num) do
